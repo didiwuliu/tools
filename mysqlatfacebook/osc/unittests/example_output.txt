@@ -1,0 +1,173 @@
+cleanupTestOSC.php
+Initialization done
+[2]Caught and ignored exception Faking error Selecting database:use `osc_test`
+[7]Caught and ignored exception Faking error Turning binlog off:SET sql_log_bin = 0
+[12]Caught and ignored exception Faking error Setting sql_mode to STRICT_ALL_TABLES:SET sql_mode = STRICT_ALL_TABLES
+[14]Caught and ignored exception Faking error Selecting database:use `osc_test`
+[16]Caught and ignored exception Faking error Turning binlog off:SET sql_log_bin = 0
+[22]Caught and ignored exception Faking error Setting sql_mode to STRICT_ALL_TABLES:SET sql_mode = STRICT_ALL_TABLES
+[44]Caught and ignored exception Faking error Selecting database:use `osc_test`
+[46]Caught and ignored exception Faking error Turning binlog off:SET sql_log_bin = 0
+[47]Caught and ignored exception Faking error Selecting database:use `osc_test`
+[61]Caught and ignored exception Faking error Selecting database:use `osc_test`
+[78]Caught and ignored exception Faking error Setting sql_mode to STRICT_ALL_TABLES:SET sql_mode = STRICT_ALL_TABLES
+[79]Caught and ignored exception Faking error Turning binlog off:SET sql_log_bin = 0
+[81]Caught and ignored exception Faking error Setting sql_mode to STRICT_ALL_TABLES:SET sql_mode = STRICT_ALL_TABLES
+[83]Caught and ignored exception Faking error Setting sql_mode to STRICT_ALL_TABLES:SET sql_mode = STRICT_ALL_TABLES
+[84]Caught and ignored exception Faking error Setting sql_mode to STRICT_ALL_TABLES:SET sql_mode = STRICT_ALL_TABLES
+[91]Caught and ignored exception Faking error Turning binlog off:SET sql_log_bin = 0
+[92]Caught and ignored exception Faking error Selecting database:use `osc_test`
+[96]Caught and ignored exception Faking error Turning binlog off:SET sql_log_bin = 0
+[98]Caught and ignored exception Faking error Setting sql_mode to STRICT_ALL_TABLES:SET sql_mode = STRICT_ALL_TABLES
+[101]Caught and ignored exception Faking error Selecting database:use `osc_test`
+[105]Caught and ignored exception Faking error Turning binlog off:SET sql_log_bin = 0
+[124]Caught and ignored exception Faking error Turning binlog off:SET sql_log_bin = 0
+[125]Caught and ignored exception Faking error Setting sql_mode to STRICT_ALL_TABLES:SET sql_mode = STRICT_ALL_TABLES
+[128]Caught and ignored exception Faking error Selecting database:use `osc_test`
+[130]Caught and ignored exception Faking error Turning binlog off:SET sql_log_bin = 0
+[136]Caught and ignored exception Faking error Setting sql_mode to STRICT_ALL_TABLES:SET sql_mode = STRICT_ALL_TABLES
+[154]Caught and ignored exception Faking error Turning binlog off:SET sql_log_bin = 0
+[155]Caught and ignored exception Faking error Setting sql_mode to STRICT_ALL_TABLES:SET sql_mode = STRICT_ALL_TABLES
+[166]Caught and ignored exception Faking error Setting sql_mode to STRICT_ALL_TABLES:SET sql_mode = STRICT_ALL_TABLES
+[189]Caught and ignored exception Faking error Turning binlog off:SET sql_log_bin = 0
+[194]Caught and ignored exception Faking error Turning binlog off:SET sql_log_bin = 0
+[199]Caught and ignored exception Faking error Setting sql_mode to STRICT_ALL_TABLES:SET sql_mode = STRICT_ALL_TABLES
+checking if cleanup needed
+array(0) {
+}
+Doing cleanup
+verifying
+All checksums match to 1924527801
+No OSC triggers/tables left behind
+
+errorTestOSC.php
+Initialization Done
+Failed: update TestOSC set comment = concat('updated ', comment), minicomment = concat('updated ', minicomment) where logtestkey = 18 and testkey = 300085 due to error: Lock wait timeout exceeded; try restarting transaction
+Retrying update
+OSC[0] returned FAILURE
+Caught constructor exception: Faking error Setting sql_mode to STRICT_ALL_TABLES:SET sql_mode = STRICT_ALL_TABLES
+OSC[1] returned FAILURE
+OSC[2] returned FAILURE
+OSC[3] returned FAILURE
+OSC[4] returned FAILURE
+OSC[5] returned FAILURE
+OSC[6] returned FAILURE
+OSC[7] returned FAILURE
+OSC[8] returned FAILURE
+Caught constructor exception: Faking error Turning binlog off:SET sql_log_bin = 0
+OSC[9] returned FAILURE
+OSC[10] returned FAILURE
+OSC[11] returned FAILURE
+OSC[12] returned FAILURE
+Caught constructor exception: Faking error Turning binlog off:SET sql_log_bin = 0
+OSC[13] returned FAILURE
+OSC[14] returned FAILURE
+Failed: insert into TestOSC(logtestkey, testkey, comment, minicomment) values(19, 526292, 'comment for526292', 'mini 526292') due to error: Lock wait timeout exceeded; try restarting transaction
+Retrying insert
+OSC[15] returned FAILURE
+OSC[16] returned FAILURE
+Caught constructor exception: Faking error Turning binlog off:SET sql_log_bin = 0
+OSC[17] returned FAILURE
+OSC[18] returned FAILURE
+Failed: delete from TestOSC where logtestkey = 11 and testkey = 3937 due to error: Lock wait timeout exceeded; try restarting transaction
+Retrying delete
+OSC[19] returned FAILURE
+OSC[20] returned FAILURE
+OSC[21] returned FAILURE
+OSC[22] returned FAILURE
+OSC[23] returned FAILURE
+Caught constructor exception: Faking error Setting sql_mode to STRICT_ALL_TABLES:SET sql_mode = STRICT_ALL_TABLES
+OSC[24] returned FAILURE
+OSC[25] returned FAILURE
+OSC[26] returned FAILURE
+OSC[27] returned FAILURE
+Failed: insert into TestOSC(logtestkey, testkey, comment, minicomment) values(19, 533437, 'comment for533437', 'mini 533437') due to error: Lock wait timeout exceeded; try restarting transaction
+Retrying insert
+OSC[28] returned FAILURE
+Failed: delete from TestOSC where logtestkey = 13 and testkey = 9117 due to error: Lock wait timeout exceeded; try restarting transaction
+Retrying delete
+OSC[29] returned FAILURE
+Failed: update TestOSC set comment = concat('updated ', comment), minicomment = concat('updated ', minicomment) where logtestkey = 18 and testkey = 308940 due to error: Lock wait timeout exceeded; try restarting transaction
+Retrying update
+Failed: insert into TestOSC(logtestkey, testkey, comment, minicomment) values(19, 535889, 'comment for535889', 'mini 535889') due to error: Table 'osc_test.TestOSC' doesn't exist
+Retrying insert
+Failed: delete from TestOSC where logtestkey = 13 and testkey = 11400 due to error: Table 'osc_test.TestOSC' doesn't exist
+Failed: update TestOSC set comment = concat('updated ', comment), minicomment = concat('updated ', minicomment) where logtestkey = 18 and testkey = 311000 due to error: Table 'osc_test.TestOSC' doesn't exist
+Retrying update
+Retrying delete
+OSC[30] returned SUCCESS
+Inserts Done
+Deletes Done
+Updates Done
+
+funcTestOSC.php
+Testing table with no NC indexes
+Testing table with NC autoincrement index
+Testing table with no PK
+Testing bad alter PK case
+Testing bad alter PK with override
+Testing dropping column
+Testing reversing PK columns
+Testing adding autoincrement column as PK
+Testing partitioned alter
+Testing killing of dump like connections
+
+longxactTestOSC.php
+OSC is done
+verification done. waiting for other process to exit.
+
+splitTestOSC.php
+Initialization done
+Doing 1st rebuild
+Doing verification
+Doing 2nd rebuild
+Doing verification
+connection went away at 2012-03-27T17:13:24-07:00
+Doing 3rd rebuild
+Doing verification
+connection went away at 2012-03-27T17:14:01-07:00
+Doing 4th rebuild
+Doing verification
+connection went away at 2012-03-27T17:35:50-07:00
+
+stressTestOSCAddPK.php
+Initialization Done
+Running alter
+Failed: update TestOSC set comment = concat('updated ', comment), minicomment = concat('updated ', minicomment) where logtestkey = 18 and testkey = 300073 and testkey2 = 300073 due to error: Lock wait timeout exceeded; try restarting transaction
+Retrying update
+Failed: update TestOSC set comment = concat('updated ', comment), minicomment = concat('updated ', minicomment) where logtestkey = 18 and testkey = 328000 and testkey2 = 328000 due to error: Table 'osc_test.TestOSC' doesn't exist
+Retrying update
+Failed: insert into TestOSC(logtestkey, testkey, testkey2, comment, minicomment) values(19, 558289, 558289, 'comment for558289', 'mini 558289') due to error: Table 'osc_test.TestOSC' doesn't exist
+Retrying insert
+Failed: delete from TestOSC where logtestkey = 14 and testkey = 31461 and testkey2 = 31461 due to error: Table 'osc_test.TestOSC' doesn't exist
+Retrying delete
+Inserts Done
+Deletes Done
+Updates Done
+
+stressTestOSC.php
+Initialization Done
+Failed: delete from `table` where logtestkey = 14 and `column` = 27053 due to error: Lock wait timeout exceeded; try restarting transaction
+Retrying delete
+Failed: delete from `table` where logtestkey = 14 and `column` = 27053 due to error: Table 'osc_test.table' doesn't exist
+Retrying delete
+Failed: update `table` set `order` = concat('updated ', `order`), `group` = concat('updated ', `group`) where logtestkey = 18 and `column` = 324000 due to error: Table 'osc_test.table' doesn't exist
+Retrying update
+Inserts Done
+Deletes Done
+Updates Done
+
+stressTestOSCPK.php
+Initialization Done
+Failed: delete from TestOSC where logtestkey = 7 and testkey = 128 and testkey2 = 128 due to error: Lock wait timeout exceeded; try restarting transaction
+Retrying delete
+Failed: delete from TestOSC where logtestkey = 14 and testkey = 20000 and testkey2 = 20000 due to error: Table 'osc_test.TestOSC' doesn't exist
+Retrying delete
+Failed: update TestOSC set comment = concat('updated ', comment), minicomment = concat('updated ', minicomment) where logtestkey = 18 and testkey = 318000 and testkey2 = 318000 due to error: Table 'osc_test.TestOSC' doesn't exist
+Failed: insert into TestOSC(logtestkey, testkey, testkey2, comment, minicomment) values(19, 544289, 544289, 'comment for544289', 'mini 544289') due to error: Table 'osc_test.TestOSC' doesn't exist
+Retrying update
+Retrying insert
+Inserts Done
+Deletes Done
+Updates Done
+

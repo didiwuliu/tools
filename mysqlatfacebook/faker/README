@@ -1,0 +1,19 @@
+InnoDB fake changes based replication prefetcher
+
+Dependencies:
+	* MySQL Client libraries
+	* GLib2 runtime
+	* MySQL Server with InnoDB fake changes 
+	  (MySQL@Facebook or Percona Server) and InnoDB-only tables
+
+Running:
+	Username and password can be specified either with -u/-p or
+	via properties file (-f) which has simple format:
+
+		mysql_user faker
+		mysql_pass secret
+
+	Standard my.cnf and ~/.my.cnf specifications will work fine too. 
+
+	Running on a system that has no support or uses tables not
+	covered by fake changes support will break things.
