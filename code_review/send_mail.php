@@ -7,9 +7,23 @@
  * @version V3.0
  * @copyright  Copyright (c) 2010-2014 Luomor Inc. (http://www.luomor.com)
  */
-$to = "zhangchunsheng@yongche.com";
+/*$to = "zhangchunsheng@yongche.com";
 $subject = "review code";
 $txt = "review code";
 $headers = "From: noreply@yongche.com" . "\r\n";
 
-mail($to, $subject, $txt, $headers);
+mail($to, $subject, $txt, $headers);*/
+
+require_once("email.class.php");
+$smtpserver = "smtp.263.net";
+$smtpserverport = 25;
+$smtpusermail = "noreply@yongche.com";
+$smtpemailto = "zhangchunsheng@yongche.com,guoxiaodong@yongche.com,wangjing@yongche.com,zhenyun@yongche.com,renxinchang@yongche.com";
+$smtpuser = "zhangchunsheng@yongche.com";
+$smtppass = "html5isgood";
+$mailtitle = "review code";
+$mailcontent = "review code";
+$mailtype = "TXT";
+$smtp = new smtp($smtpserver, $smtpserverport, true, $smtpuser, $smtppass);
+$smtp->debug = false;
+$smtp->sendmail($smtpemailto, $smtpusermail, $mailtitle, $mailcontent, $mailtype);
