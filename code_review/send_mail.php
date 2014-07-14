@@ -7,6 +7,7 @@
  * @version V3.0
  * @copyright  Copyright (c) 2010-2014 Luomor Inc. (http://www.luomor.com)
  */
+error_reporting(~E_ALL);
 /*$to = "zhangchunsheng@yongche.com";
 $subject = "review code";
 $txt = "review code";
