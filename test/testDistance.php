@@ -50,17 +50,27 @@ $destination_lat = $destination[1];
 
 $map = new YCL_Map();
 
-/*println($map->getDistance(array(
+/*$result = $map->getDistance(array(
     array('lng' => -73.994529,'lat' => 40.735243),
     array('lng' => -74.009735,'lat' => 40.705697)
-)));*/
+));*/
 
-/*print_r($map->getDistance(array(
+/*$result = $map->getDistance(array(
     array('lng' => 116.481028,'lat' => 39.989643),
     array('lng' => 114.465302,'lat' => 40.004717)
-)));*/
+));*/
 
-print_r($map->getDistance(array(
+$result = $map->getDistance(array(
     array('lng' => $orgin_lng,'lat' => $orgin_lat),
     array('lng' => $destination_lng,'lat' => $destination_lat)
-)));
+));
+
+$result = $map->getDistanceExtra(array(
+    array('lng' => $orgin_lng,'lat' => $orgin_lat),
+    array('lng' => $destination_lng,'lat' => $destination_lat)
+), '', '');
+
+$result = $map->getAmapDistance(array(
+    array('lng' => $orgin_lng,'lat' => $orgin_lat),
+    array('lng' => $destination_lng,'lat' => $destination_lat)
+));
