@@ -31,11 +31,11 @@ $count = 0;
 foreach($content as $value) {
     $url = $value . "&method=baidu";
     $result_baidu = request($url);
-    fwrite($file, $result_baidu . "\n");
+    fwrite($file, $url . " " . $result_baidu . "\n");
 
     $url = $value . "&method=amap";
     $result_amap = request($url);
-    fwrite($file, $result_amap . "\n");
+    fwrite($file, $url . " " . $result_amap . "\n");
 
     $result_baidu = json_decode($result_baidu);
     $result_amap = json_decode($result_amap);
