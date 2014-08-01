@@ -60,19 +60,23 @@ $map = new YCL_Map();
     array('lng' => 114.465302,'lat' => 40.004717)
 ));*/
 
-$result = $map->getDistance(array(
-    array('lng' => $orgin_lng,'lat' => $orgin_lat),
-    array('lng' => $destination_lng,'lat' => $destination_lat)
-));
+$method = isset($_GET["method"]) ? $_GET["method"] : "multi";
 
-$result = $map->getDistanceExtra(array(
-    array('lng' => $orgin_lng,'lat' => $orgin_lat),
-    array('lng' => $destination_lng,'lat' => $destination_lat)
-), '', '');
+if($method == "baidu") {
+    $result = $map->getDistanceExtra(array(
+        array('lng' => $orgin_lng,'lat' => $orgin_lat),
+        array('lng' => $destination_lng,'lat' => $destination_lat)
+    ), '', '');
+} elseif($method == "amap") {
+    $result = $map->getAmapDistance(array(
+        array('lng' => $orgin_lng,'lat' => $orgin_lat),
+        array('lng' => $destination_lng,'lat' => $destination_lat)
+    ));
+} else {
+    $result = $map->getDistance(array(
+        array('lng' => $orgin_lng,'lat' => $orgin_lat),
+        array('lng' => $destination_lng,'lat' => $destination_lat)
+    ));
+}
 
-$result = $map->getAmapDistance(array(
-    array('lng' => $orgin_lng,'lat' => $orgin_lat),
-    array('lng' => $destination_lng,'lat' => $destination_lat)
-));
-
-print_r($result);
+echo json_decode($result);
