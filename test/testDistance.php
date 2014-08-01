@@ -79,4 +79,4 @@ if($method == "baidu") {
     ));
 }
 
-echo json_decode($result);
+echo json_encode($result);
