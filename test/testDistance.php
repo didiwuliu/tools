@@ -8,6 +8,35 @@
  * @version V1.0
  * @copyright  Copyright (c) 2010-2014 Luomor Inc. (http://www.luomor.com)
  */
+function indexAutoload($clazz) {
+    $file = str_replace('_', '/', $clazz);
+
+    if(is_file("/usr/share/pear/$file.php"))
+        require "/usr/share/pear/$file.php";
+}
+
+spl_autoload_register('indexAutoload');
+
+$config = new Zend_Config(array(
+    'proxy' => array(
+        'proxy' => '10.1.5.13:8087',
+        'proxyAuth' => ''
+    ),
+    'oversea_server' => array(
+        'map' => 'http://54.254.199.29'
+    ),
+    'map_baidu' => array(
+        'key' => 'DEd51bf09fcded27d8705981745b7351',
+    ),
+    'map_google' => array(
+        'key' => 'AIzaSyBF5oBKe7CNQUddA4bAokOWgSYNq4NmB4I',
+    ),
+    'map_amap' => array(
+        'key' => '17f352fa1e15fd82d377ea0ea939131c',
+    ),
+));
+Zend_Registry::set('config', $config);
+
 $map = new YCL_Map();
 
 /*println($map->getDistance(array(
