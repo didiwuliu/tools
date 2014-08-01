@@ -74,3 +74,5 @@ $result = $map->getAmapDistance(array(
     array('lng' => $orgin_lng,'lat' => $orgin_lat),
     array('lng' => $destination_lng,'lat' => $destination_lat)
 ));
+
+print_r($result);
