@@ -44,7 +44,7 @@ $map = new YCL_Map();
     array('lng' => -74.009735,'lat' => 40.705697)
 )));*/
 
-println($map->getDistance(array(
+print_r($map->getDistance(array(
     array('lng' => 116.481028,'lat' => 39.989643),
     array('lng' => 114.465302,'lat' => 40.004717)
 )));
