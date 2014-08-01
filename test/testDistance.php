@@ -37,8 +37,8 @@ $config = new Zend_Config(array(
 ));
 Zend_Registry::set('config', $config);
 
-$origin = url_decode($_GET["origin"]);
-$destination = url_decode($_GET["destination"]);
+$origin = urldecode($_GET["origin"]);
+$destination = urldecode($_GET["destination"]);
 
 $origin = explode(",", $origin);
 $orgin_lng = $origin[0];
