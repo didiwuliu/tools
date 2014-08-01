@@ -37,6 +37,17 @@ $config = new Zend_Config(array(
 ));
 Zend_Registry::set('config', $config);
 
+$origin = url_decode($_GET["origin"]);
+$destination = url_decode($_GET["destination"]);
+
+$origin = explode(",", $origin);
+$orgin_lng = $origin[0];
+$orgin_lat = $origin[1];
+
+$destination = explode(",", $destination);
+$destination_lng = $destination[0];
+$destination_lat = $destination[1];
+
 $map = new YCL_Map();
 
 /*println($map->getDistance(array(
@@ -44,7 +55,12 @@ $map = new YCL_Map();
     array('lng' => -74.009735,'lat' => 40.705697)
 )));*/
 
-print_r($map->getDistance(array(
+/*print_r($map->getDistance(array(
     array('lng' => 116.481028,'lat' => 39.989643),
     array('lng' => 114.465302,'lat' => 40.004717)
+)));*/
+
+print_r($map->getDistance(array(
+    array('lng' => $orgin_lng,'lat' => $orgin_lat),
+    array('lng' => $destination_lng,'lat' => $destination_lat)
 )));
