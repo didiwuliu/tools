@@ -26,7 +26,7 @@ $diff = 0.1;
 
 $count_distance_diff = 0;
 $count_duration_diff = 0;
-$count = count($content);
+$count = 0;
 
 foreach($content as $value) {
     $url = $value . "&method=baidu";
@@ -40,24 +40,28 @@ foreach($content as $value) {
     $result_baidu = json_decode($result_baidu);
     $result_amap = json_decode($result_amap);
 
-    $distance_baidu = $result_baidu->distance;
-    $distance_amap = $result_amap->distance;
+    if(isset($result_baidu->distance)) {
+        $distance_baidu = $result_baidu->distance;
+        $distance_amap = $result_amap->distance;
 
-    $duration_baidu = $result_baidu->duration;
-    $duration_amap = $result_amap->duration;
+        $duration_baidu = $result_baidu->duration;
+        $duration_amap = $result_amap->duration;
 
-    $stand_distance_diff = $distance_baidu * $diff;
-    $stand_duration_diff = $duration_baidu * $diff;
+        $stand_distance_diff = $distance_baidu * $diff;
+        $stand_duration_diff = $duration_baidu * $diff;
 
-    $distance_diff = abs($distance_baidu - $distance_amap);
-    $duration_diff = abs($duration_baidu - $duration_amap);
+        $distance_diff = abs($distance_baidu - $distance_amap);
+        $duration_diff = abs($duration_baidu - $duration_amap);
 
-    if($distance_diff > $stand_distance_diff) {
-        $count_distance_diff++;
-    }
+        $count++;
 
-    if($duration_diff > $stand_duration_diff) {
-        $count_duration_diff++;
+        if($distance_diff > $stand_distance_diff) {
+            $count_distance_diff++;
+        }
+
+        if($duration_diff > $stand_duration_diff) {
+            $count_duration_diff++;
+        }
     }
 }
 
