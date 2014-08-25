@@ -7,6 +7,9 @@
 [tools_1.0.0.1 2014-08-01 张春生]
 1.新功能:增加testDistance测试
 
+[tools_1.0.0.1 2014-08-25 张春生]
+1.新功能:update smtp user info
+
 --备注分类
 1、新功能：
 2、Bug:
