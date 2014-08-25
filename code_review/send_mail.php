@@ -18,9 +18,9 @@ mail($to, $subject, $txt, $headers);*/
 require_once("email.class.php");
 $smtpserver = "smtp.263.net";
 $smtpserverport = 25;
-$smtpusermail = "noreply@yongche.com";
-$smtpemailto = "zhangchunsheng@yongche.com,guoxiaodong@yongche.com,wangjing@yongche.com,zhenyun@yongche.com,renxinchang@yongche.com";
-$smtpuser = "test@yongche.com";
+$smtpusermail = "";
+$smtpemailto = "";
+$smtpuser = "";
 $smtppass = "";
 $mailtitle = "review code";
 $mailcontent = "review code";
